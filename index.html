@@ -4,45 +4,74 @@
 		<meta charset="UTF-8">
 		<meta name="viewport">
 		<style>
+			.h2 {
+				margin-top: 50px;
+				z-index: 6;
+				text-align: center;
+			}
+			p {
+				margin-left: 40px;
+				font-size: 15px;
+			}
+			li {
+				font-size: 15px;
+			}
+			.opisanie {
+				border: 1px solid aliceblue;
+				width: 1152px;
+				margin-top: -50px;
+				margin-left: 64px;
+				background-color: aliceblue;
+				border-radius: 30px;
+			}
+			.hone_rot {
+				display: flex;
+				position: absolute;
+				width: 180px;
+				height: 180px;
+				bottom: 5px;
+				margin-left: 46px;
+				background-color: aliceblue;
+				border-radius: 100%;
+			}
 			.h1 {
 				position: absolute;
-				margin-top: 20px;
-				margin-left: 250px;
+				margin-top: 25px;
+				margin-left: 225px;
 				display: flex;
 				width: 332px;
 				height: 41px;
 				flex-direction: column;
-				flex-shrink: 0;
 			}
 			.rot {
 				display: flex;
 				position: absolute;
 				width: 160px;
 				height: 150px;
-				flex-shrink: 0;
-				bottom: 110px;
-				margin-left: 70px;
+				bottom: 25px;
+				margin-left: 55px;
 				background-image: url(favicon.png);
 				z-index: 1;
 				border-radius: 100%;
 			}
+			html {
+				background-color: rgb(156, 156, 156);
+			}
 			.cot {
 				display: flex;
 				width: 1152px;
-				height: 178px;
-				flex-shrink: 0;
+				height: 125px;
 				position: absolute;
 				bottom: 0;
 				border-radius: 30px;
-				background-color: lightslategray;
+				background-color:aliceblue;
 			}
 			.contayner {
 				display: flex;
 				position: relative;
 				margin-left: 64px;
 				width: 1152px;
-				height: 695px;
-				flex-shrink: 0;
+				height: 520px;
 				border-radius: 30px;
 				background-image: url(Rectangle.png);
 			}
@@ -57,12 +86,6 @@
 			}
 			a {
 				text-decoration: none;
-				border-bottom: 0 solid #FF0000;
-				transition: 0.1s
-			}
-			a:hover {
-				transform: rotate(3deg) translate(5px);
-				border-bottom-width: 3px;
 			}
 			nav {
 				z-index: 1;
@@ -70,9 +93,9 @@
 				top: 0;
 				left: 0;
 				right: 0;
-				margin:0 50px;
-				padding-top: 2rem;
-				padding-bottom: 20px;
+				margin:0 60px;
+				padding-top: 10px;
+				padding-bottom: 5px;
 			}
 			nav .nav-container {
 				display: flex;
@@ -91,7 +114,7 @@
 				margin: 1em;
 				font-size: 0.85rem;
 				letter-spacing: 1px;
-				color: black;
+				color: rgb(0, 0, 139);
 			}
 			.nav-logo {
 				position: relative;
@@ -116,10 +139,26 @@
 			</div>
 		</nav>
 		<div class="contayner">
+			<div class="hone_rot"></div>
 			<div class="rot"></div>
 			<div class="cot">
 				<h1 class="h1">ВПК "Братишка"</h1>
 			</div>
+		</div>
+		<div class="opisanie">
+			<h1 class="h2">Военно-патриотический клуб «БРАТИШКА»<h1>
+			<p>Проводится работа с молодежью, в том числе допризывной, по военно-патриотическому воспитанию, военно-прикладным спортом, военной начальной подготовке, активному и полезному времяпрепровождению.</p>
+			<p>Направления деятельности:</p>
+			<ul>
+				<li>Воздушно-десантная подготовка (работа при десантировании, прыжки с парашютом);</li>
+				<li>Огневая подготовка (оружейная культура, правила точной и меткой стрельбы, практические стрельбы);</li>
+				<li> Военно-штурмовой альпинизм (работа с альп снаряжением, штурм здания, преодоление водных преград, скалолазание);</li>
+				<li>Общевойсковая подготовка (строевая, РХБЗ);</li>
+				<li>Тактико-специальная подготовка (разведка, ориентирование, выживание);</li>
+				<li>История России в лицах Спецназа (ратные подвиги обычных людей из Спецназа ВДВ, ГРУ, ФСБ);</li>
+				<li> Правовая подготовка (правовое информирование, порядок поступления в военные ВУЗы РФ);</li>
+				<li>Военно-тактические игры, соревнования, мероприятия;</li>
+			</ul>
 		</div>
 	</body>
 </html>
