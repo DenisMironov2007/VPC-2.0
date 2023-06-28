@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport">
+		<style>
+			.h1 {
+				position: absolute;
+				margin-top: 20px;
+				margin-left: 250px;
+				display: flex;
+				width: 332px;
+				height: 41px;
+				flex-direction: column;
+				flex-shrink: 0;
+			}
+			.rot {
+				display: flex;
+				position: absolute;
+				width: 160px;
+				height: 150px;
+				flex-shrink: 0;
+				bottom: 110px;
+				margin-left: 70px;
+				background-image: url(favicon.png);
+				z-index: 1;
+				border-radius: 100%;
+			}
+			.cot {
+				display: flex;
+				width: 1152px;
+				height: 178px;
+				flex-shrink: 0;
+				position: absolute;
+				bottom: 0;
+				border-radius: 30px;
+				background-color: lightslategray;
+			}
+			.contayner {
+				display: flex;
+				position: relative;
+				margin-left: 64px;
+				width: 1152px;
+				height: 695px;
+				flex-shrink: 0;
+				border-radius: 30px;
+				background-image: url(Rectangle.png);
+			}
+			body {
+				background-position: top;
+				font-family: 'Inter', sans-serif;
+				margin: 0;
+				background-repeat: no-repeat;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			a {
+				text-decoration: none;
+				border-bottom: 0 solid #FF0000;
+				transition: 0.1s
+			}
+			a:hover {
+				transform: rotate(3deg) translate(5px);
+				border-bottom-width: 3px;
+			}
+			nav {
+				z-index: 1;
+				position: sticky;
+				top: 0;
+				left: 0;
+				right: 0;
+				margin:0 50px;
+				padding-top: 2rem;
+				padding-bottom: 20px;
+			}
+			nav .nav-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.nav-links {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				margin: -1em 0;
+				flex: 1 0 auto;
+			}
+			.nav-links .link {
+				position: relative;
+				margin: 1em;
+				font-size: 0.85rem;
+				letter-spacing: 1px;
+				color: black;
+			}
+			.nav-logo {
+				position: relative;
+				line-height: 1;
+				font-size: 1.1rem;
+				color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<nav>
+			<div class="nav-container">
+				<div class="nav-links">
+					<a href="/" class="link">Главная</a>
+					<a href="/" class="link">О клубе</a>
+					<a href="/" class="link">Новости</a>
+					<a href="/" class="link">Занятия</a>
+					<a href="/" class="link">Медиа</a>
+					<a href="/" class="link">Достижения</a>
+					<a href="/" class="link">Контакты</a>
+				</div>
+			</div>
+		</nav>
+		<div class="contayner">
+			<div class="rot"></div>
+			<div class="cot">
+				<h1 class="h1">ВПК "Братишка"</h1>
+			</div>
+		</div>
+	</body>
+</html>
