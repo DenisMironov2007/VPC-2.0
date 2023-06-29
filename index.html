@@ -2,8 +2,78 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport">
+		<meta name="viewport" content="width=device-width">
+		<title>Главная</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script>
+			jQuery(document).ready(function($) {
+			$('.spoiler_title').click(function() {
+				$(this).parents('.spoiler_wrap').find('.spoiler_content').toggleClass('open');
+					$(this).parents('.spoiler_wrap').find('.spoiler_arrow').toggleClass('open');
+			});
+			});
+		</script>
 		<style>	
+			.spoiler_wrap {
+					margin-left: 64px;
+					width: 1150px;
+					font-size: 22px;
+					background: #fff;
+					border-radius: 5px;
+					height: fit-content;
+			}
+			.spoiler_title {
+				cursor: pointer;
+			}
+
+			.spoiler_title, .spoiler_content {
+				padding: 30px 26px;
+			}
+
+			.spoiler_content {
+				padding-top: 0;
+				padding-bottom: 10px;
+				transition: 0.15s ease-out;
+				height: auto;
+				max-height: 0px;
+				overflow: hidden;
+				margin-top: -10px;
+				opacity: 0;
+				font-size: 14px;
+				color: #444;
+			}
+
+			.spoiler_content p {
+				font-size: 16px;
+				margin: 20px 0;
+				color: #333;
+				line-height: 1.4;
+			}
+
+			.spoiler_content.open {
+				margin-top: 0;
+				max-height: 100%;
+				opacity: 1;
+			}
+
+			.spoiler_title .spoiler_arrow {
+				display: inline-block;
+				margin-left: 15px;
+				font-size: 20px;
+				transition: all .1s;
+				vertical-align: middle;
+			}
+
+			.spoiler_title .spoiler_arrow svg {
+				fill: red;
+				width: 13px;
+			}
+			.spoiler_title .spoiler_arrow.open {
+				transform: rotate(180deg);
+			}
+			.r {
+				margin-left: 10px;
+			}
 			/* скрываем чекбоксы и блоки с содержанием */
 			.hide,
 			.hide + label ~ div {
@@ -25,12 +95,12 @@
 				display: block; 
 				border-radius: 30px;
 				padding: 30px;
-				background-color: aliceblue;
+				background-color: #fff;
 				margin-top: 30px;
 				/* чуточку анимации при появлении */
-				-webkit-animation:fade ease-in 0.5s; 
-				-moz-animation:fade ease-in 0.5s;
-				animation:fade ease-in 0.5s; 
+				-webkit-animation: fade ease-in 0.5s;                                                                                                                                                                                                                                                  
+				-moz-animation: fade ease-in 0.5s;
+				animation: fade ease-in 0.5s; 
 			}
 			/* анимация при появлении скрытых блоков */
 			@-moz-keyframes fade {
@@ -45,16 +115,23 @@
 				from { opacity: 0; }
 				to { opacity: 1 }   
 			}
+			.poslednew {
+				border: 1px solid #fff;
+				width: 1151px;
+				margin-top: 10px;
+				margin-left: 64.5px;
+				border-radius: 7px;
+				background-color: #fff;
+				border-radius: 30px;
+			}
 			.qwerty {
-				border: 1px solid aliceblue;
+				border: 1px solid #fff;
 				width: 1152px;
 				margin-top: 10px;
-				background-color: aliceblue;
+				background-color: #fff;
 				border-radius: 30px;
 			}
 			.h2 {
-				margin-top: 55px;
-				z-index: 2;
 				text-align: center;
 			}
 			p {
@@ -65,16 +142,7 @@
 				font-size: 15px;
 			}
 			.opisanie {
-				z-index: 6;
-				border: 1px solid aliceblue;
-				width: 1152px;
-				margin-top: -50px;
-				margin-left: 64px;
-				background-color: aliceblue;
-				border-radius: 30px;
-			}
-			h1 {
-				margin-top: 50px;
+				margin-top: 100px;
 			}
 			.hone_rot {
 				display: flex;
@@ -83,7 +151,7 @@
 				height: 180px;
 				bottom: 5px;
 				margin-left: 46px;
-				background-color: aliceblue;
+				background-color: #fff;
 				border-radius: 100%;
 			}
 			.h1 {
@@ -117,7 +185,7 @@
 				position: absolute;
 				bottom: 0;
 				border-radius: 7px;
-				background-color:aliceblue;
+				background-color:#fff;
 			}
 			.contayner {
 				display: flex;
@@ -182,7 +250,7 @@
 		<nav>
 			<div class="nav-container">
 				<div class="nav-links">
-					<a href="/" class="link">Главная</a>
+					<a href="" class="link">Главная</a>
 					<a href="/" class="link">Занятия</a>
 					<a href="/" class="link">Медиа</a>
 					<a href="/" class="link">Достижения</a>
@@ -195,26 +263,33 @@
 			<div class="rot"></div>
 			<div class="cot">
 				<h1 class="h1">ВПК "Братишка"</h1>
-				<div class="qwerty">
-					<input class="hide" id="hd-1" type="checkbox" >
-					<label for="hd-1">Нажмите здесь, чтобы открыть описание!</label>
-					<div>
-						<h1 class="h2">Военно-патриотический клуб «БРАТИШКА»<h1>
-						<p>Проводится работа с молодежью, в том числе допризывной, по военно-патриотическому воспитанию, военно-прикладным спортом, военной начальной подготовке, активному и полезному времяпрепровождению.</p>
-						<p>Направления деятельности:</p>
-						<ul>
-							<li>Воздушно-десантная подготовка (работа при десантировании, прыжки с парашютом);</li>
-							<li>Огневая подготовка (оружейная культура, правила точной и меткой стрельбы, практические стрельбы);</li>
-							<li> Военно-штурмовой альпинизм (работа с альпинистским снаряжением, штурм здания, преодоление водных преград, скалолазание);</li>
-							<li>Общевойсковая подготовка (строевая, РХБЗ);</li>
-							<li>Тактико-специальная подготовка (разведка, ориентирование, выживание);</li>
-							<li>История России в лицах Спецназа (ратные подвиги обычных людей из Спецназа ВДВ, ГРУ, ФСБ);</li>
-							<li> Правовая подготовка (правовое информирование, порядок поступления в военные ВУЗы РФ);</li>
-							<li>Военно-тактические игры, соревнования, мероприятия;</li>
-						</ul>
-					</div>
+			</div>
+		</div>
+		<div class="opisanie">
+			<div class="spoiler_wrap">
+				<div class="spoiler_title">Описание
+					<span class="spoiler_arrow"><svg viewBox="-122.9 121.1 105.9 61.9"><path d="M-63.2 180.3l43.5-43.5c1.7-1.7 2.7-4 2.7-6.5s-1-4.8-2.7-6.5c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.7L-69.9 161l-37.2-37.2c-1.7-1.7-4-2.7-6.5-2.7s-4.8 1-6.5 2.6c-1.9 1.8-2.8 4.2-2.8 6.6 0 2.3.9 4.6 2.6 6.5 11.4 11.5 41 41.2 43 43.3l.2.2c3.6 3.6 10.3 3.6 13.9 0z"></path></svg></span>
+				</div>
+				<div class="spoiler_content">
+					<h1 class="h2">Военно-патриотический клуб «БРАТИШКА»<h1>
+					<p>Проводится работа с молодежью, в том числе допризывной, по военно-патриотическому воспитанию, военно-прикладным спортом, военной начальной подготовке, активному и полезному времяпрепровождению.</p>
+					<p>Направления деятельности:</p>
+					<ul>
+						<li>Воздушно-десантная подготовка (работа при десантировании, прыжки с парашютом);</li>
+						<li>Огневая подготовка (оружейная культура, правила точной и меткой стрельбы, практические стрельбы);</li>
+						<li> Военно-штурмовой альпинизм (работа с альпинистским снаряжением, штурм здания, преодоление водных преград, скалолазание);</li>
+						<li>Общевойсковая подготовка (строевая, РХБЗ);</li>
+						<li>Тактико-специальная подготовка (разведка, ориентирование, выживание);</li>
+						<li>История России в лицах Спецназа (ратные подвиги обычных людей из Спецназа ВДВ, ГРУ, ФСБ);</li>
+						<li> Правовая подготовка (правовое информирование, порядок поступления в военные ВУЗы РФ);</li>
+						<li>Военно-тактические игры, соревнования, мероприятия;</li>
+					</ul>
 				</div>
 			</div>
+		</div>
+		<div class="poslednew">
+			<h1 class="r">Новости:</h1>
+			<div class="new1"></div>
 		</div>
 	</body>
 </html>
